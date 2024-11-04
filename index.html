@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="flipkart"></script>
+    <link rel="icon" type="png" href="flipkart-icon.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Capriola&display=swap" rel="stylesheet">
+    <title>My-Flipkart</title>
+</head>
+<style>
+    * {
+        font-family: 'Capriola', sans-serif;
+        padding: 0rem;
+        margin: 0rem;
+        box-sizing: border-box;
+    }
+
+    html {
+        font-size: 62.5%;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .main-container {
+        height: 4.150rem;
+        width: 100%;
+        background-color: rgba(236, 236, 236, 0.724);
+    }
+
+
+    /* ----------  Navbar section  ---------- */
+
+
+    .navbar {
+        z-index: 99;
+        position: fixed;
+        top: 0;
+        align-items: center;
+        width: 100%;
+        height: 5.0rem;
+        gap: 4.2rem;
+        justify-content: center;
+        display: flex;
+        background: #2874f0;
+        box-shadow: 0rem .5rem .5rem -.5rem black;
+    }
+
+    .navbar input {
+        border-radius: .3rem;
+        width: 36.6rem;
+        height: 3.4rem;
+        border: none;
+        padding: .3rem 1.1rem;
+        box-shadow: .1rem .1rem 0rem 0rem rgb(63 63 181);
+        outline: none;
+    }
+
+    input::placeholder {
+        font-size: 1.4rem;
+        align-items: center;
+
+    }
+
+
+    .navbar button {
+        background: white;
+        cursor: pointer;
+        width: 10.3rem;
+        height: 3.0rem;
+        border: none;
+        color: #0866ff;
+        font-size: 1.4rem;
+        border-radius: .3rem;
+        padding: .3rem;
+        box-shadow: .1rem .1rem 0rem 0rem rgb(63 63 181);
+        transition: all 0.3s ease-in-out;
+
+
+    }
+
+    .navbar button:hover {
+        font-size: 1.6rem;
+    }
+
+    .navbar button:active {
+        color: white;
+    }
+
+    .navbar p {
+        cursor: pointer;
+        color: white;
+        font-size: 1.5rem;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+
+    }
+
+    .navbar p:hover {
+        transform: scale(1.1);
+    }
+
+    .navbar p:active {
+        color: #0866ff;
+    }
+
+    .navbar #explore-logo {
+        width: 7.4rem;
+        transition: all 0.3s ease-in-out;
+
+    }
+
+    .navbar #explore-logo:hover {
+        transform: scale(1.1);
+    }
+
+    .navbar #cart-icon {
+        width: 1.6rem;
+        position: absolute;
+        right: 19.0rem;
+        transition: all 0.3s ease-in-out;
+
+    }
+
+    .navbar #cart-icon:hover {
+        transform: scale(1.2);
+    }
+
+    #more-navbar {
+        margin: 0rem 1.8rem 0rem 0rem;
+    }
+
+
+    /* ----------  Category section  ---------- */
+
+
+    .categories {
+        background: white;
+        width: 100%;
+        height: 11.8rem;
+        margin-top: 5rem;
+        border: .1rem solid white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0rem .1rem .5rem -.2rem black;
+    }
+
+    .cat-items-container {
+        font-size: 1.3rem;
+        width: 12.7rem;
+        padding: .2rem;
+        display: grid;
+        place-items: center;
+    }
+
+    .cat-item {
+        height: 6.2rem;
+        place-items: center;
+        display: grid;
+    }
+
+    .cat-images {
+        width: 7.0rem;
+        transition: all 0.3s linear;
+
+    }
+
+    .cat-images:hover {
+        transform: scale(1.2);
+    }
+
+    .cat-item-name {
+        color: black;
+        margin-top: 1.7rem;
+    }
+
+
+    /* ----------  Slider section  ---------- */
+
+
+    .main-slider-container {
+        padding: .2rem;
+        height: 28.5rem;
+        background: white;
+        margin: 1.8rem .6rem 0rem .4rem;
+    }
+
+    .slider-container {
+        gap: 1.0rem;
+        display: grid;
+        grid-template-columns: 100% 100% 100% 100% 100% 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        height: 40.0rem;
+    }
+
+    .slider-container::-webkit-scrollbar {
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    .slider-images {
+        height: 28.0rem;
+        width: 100%;
+    }
+
+    .s-image-1 {
+        background: url('main-slider1.webp') no-repeat center/cover;
+    }
+
+    .s-image-2 {
+        background: url('slider-item66.webp') no-repeat center/cover;
+    }
+
+    .s-image-3 {
+        background: url('slider-item33.webp') no-repeat center/cover;
+    }
+
+    .s-image-4 {
+        background: url('slider-item44.webp') no-repeat center/cover;
+    }
+
+    .s-image-5 {
+        background: url('slider-item55.webp') no-repeat center/cover;
+    }
+
+    .s-image-6 {
+        background: url('slider-item66.webp') no-repeat center/cover;
+    }
+
+
+    /* ----------  Watch section  ---------- */
+
+
+    .watch-container {
+        background: white;
+        width: 100%;
+        height: 30.8rem;
+        margin: 2.0rem 0rem 2.0rem 0rem;
+        box-shadow: 0rem 0rem .6rem -.1rem black;
+    }
+
+    .watch-container-div {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .watch-item-container {
+        width: 43.7rem;
+        transform: scale(0.95);
+    }
+
+    .watch-name {
+        height: 6.1rem;
+        display: flex;
+        padding-left: 3.3rem;
+        font-size: 2.3rem;
+        align-items: center;
+    }
+
+    .watch-image {
+        box-shadow: .2rem .2rem .9rem -.4rem black;
+        height: 22.7rem;
+        transition: all 0.3s linear;
+
+    }
+
+    .watch-image:hover {
+        box-shadow: .3rem .3rem 1.1rem -.4rem black;
+        transform: scaleY(1.1);
+    }
+
+    .w-image-1 {
+        background: url('watch-item11.png') no-repeat center/cover;
+    }
+
+    .w-image-2 {
+        background: url('watch-item2.png') no-repeat center/cover;
+    }
+
+    .w-image-3 {
+        background: url('watch-item33.png') no-repeat center/cover;
+    }
+
+    /* ----------  Electronics 1 section  ---------- */
+
+
+    .e-container {
+        background: white;
+        width: 100%;
+        height: 40.0rem;
+        margin-top: .5rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        box-shadow: 0rem 0rem .6rem -.1rem black;
+    }
+
+    .e-item-container {
+        width: 21.4rem;
+        height: 37.2rem;
+        display: grid;
+        place-items: center;
+    }
+
+    .e-image {
+        height: 24.9rem;
+        width: 15.7rem;
+        transition: 0.5s ease-in-out;
+
+    }
+
+    .e-image:hover {
+        transform: scale(1.1);
+    }
+
+    .e-image-item1 {
+        background: url('e-item1.webp') no-repeat center/cover;
+        background-size: 14.1rem;
+    }
+
+    .e-image-item2 {
+        background: url('e-item2.webp') no-repeat center/cover;
+        width: 18.6rem;
+        background-size: 18.4rem;
+    }
+
+    .e-image-item3 {
+        background: url('e-item3.webp') no-repeat center/cover;
+        background-size: 12.7rem;
+    }
+
+    .e-image-item4 {
+        background: url('e-item4.webp') no-repeat center/cover;
+        background-size: 6.7rem;
+    }
+
+    .e-image-item5 {
+        background: url('e-item5.webp') no-repeat center/cover;
+        background-size: 19.2rem;
+        width: 19.3rem;
+    }
+
+    .e-image-item6 {
+        width: 21.5rem;
+        background: url('e-item6.webp') no-repeat center/cover;
+        background-size: 20.5rem;
+    }
+
+    .e-details {
+        display: grid;
+        place-items: center;
+    }
+
+    .e-details button {
+        background: white;
+        margin: .4rem;
+        border: none;
+    }
+
+    .e-name {
+        color: black;
+        font-size: 1.4rem;
+    }
+
+    .e-price {
+        color: green;
+        font-size: 1.7rem;
+        font-family: revert;
+    }
+
+    .e-company {
+        font-size: 1.3rem;
+        color: #6a6a6a;
+    }
+
+
+    /* ----------  Offer section  ---------- */
+
+
+    .off-container {
+        left: -5rem;
+        background: #ffffff;
+        padding: 1.0rem 0rem;
+        width: 100%;
+        height: 52.5rem;
+        transform: scale(0.92);
+        position: relative;
+        display: grid;
+        place-items: center;
+        grid-template-columns: auto auto auto;
+    }
+
+    .off-item {
+        display: grid;
+        place-items: center;
+        height: 24.1rem;
+        width: 45.4rem;
+        transform: scale(0.95);
+        box-shadow: 0rem 0rem .5rem -.1rem black;
+    }
+
+    .off-item1 {
+        background: url('off-upper-item1.webp') center/cover;
+    }
+
+    .off-item2 {
+        background: url('off-upper-item2.webp') center/cover;
+    }
+
+    .off-item3 {
+        background: url('off-upper-item3.webp') center/cover;
+    }
+
+    .off-item4 {
+        background: url('off-lower-item1.webp') center/cover;
+    }
+
+    .off-item5 {
+        background: url('off-lower-item2.webp') center/cover;
+    }
+
+    .off-item6 {
+        background: url('off-lower-item3.webp') center/cover;
+    }
+
+    .off-item-extra {
+        margin-top: .7rem;
+        border-radius: .5rem;
+    }
+
+    .off-item1,
+    .off-item2,
+    .off-item3,
+    .off-item4,
+    .off-item5,
+    .off-item6 {
+        transition: all 0.3s ease-in-out;
+    }
+
+    .off-item1:hover,
+    .off-item2:hover,
+    .off-item3:hover,
+    .off-item4:hover,
+    .off-item5:hover,
+    .off-item6:hover {
+        box-shadow: 0rem 0rem 1.0rem .1rem black;
+    }
+
+
+    /* ----------  Electronics 2 section  ---------- */
+
+
+    .e2-image-item1 {
+        background: url('e2-item1.webp') no-repeat center/cover;
+        background-size: 18.3rem;
+        width: 18.3rem;
+    }
+
+    .e2-image-item2 {
+        background: url('e2-item2.jpeg') no-repeat center/cover;
+        background-size: 14.6rem;
+    }
+
+    .e2-image-item3 {
+        background: url('e2-item4.jpeg') no-repeat center/cover;
+        background-size: 20.6rem;
+        width: 21.0rem;
+    }
+
+    .e2-image-item4 {
+        background: url('e2-item3.jpeg') no-repeat center/cover;
+        background-size: 12.6rem;
+    }
+
+    .e2-image-item5 {
+        background: url('e2-item5.jpeg') no-repeat center/cover;
+        background-size: 18.4rem;
+        width: 20.8rem;
+    }
+
+    .e2-image-item6 {
+        background: url('e2-item6.jpeg') no-repeat center/cover;
+        background-size: 17.9rem;
+        width: 17.6rem;
+    }
+
+
+    /* ----------  Under section  ---------- */
+
+
+    .under-container {
+        height: 16.9rem;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: .8rem 0rem 1.2rem 0rem;
+    }
+
+    .under-image {
+        height: 12.3rem;
+        width: 100%;
+        transition: 0.5s linear;
+    }
+
+    .under-image:hover {
+        transform: scaleY(1.1);
+    }
+
+    .u-image-1 {
+        background: url('under-item1.webp') no-repeat center/cover;
+    }
+
+    .u-image-2 {
+        background: url('under-item2.webp') no-repeat center/cover;
+    }
+
+    .u-image-3 {
+        background: url('under-item3.webp') no-repeat center/cover;
+    }
+
+    .u-image-4 {
+        background: url('under-item4.webp') no-repeat center/cover;
+    }
+
+
+    /* ----------  Blue section  ---------- */
+
+
+    .blue-container {
+        height: 24.9rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.3rem;
+    }
+
+    .blue-image {
+        margin: 0rem .5rem;
+        height: 24.3rem;
+        width: 100%;
+        border-radius: 3.0rem;
+        transition: 0.3s linear;
+
+    }
+
+    .blue-image:hover {
+        box-shadow: 0rem 0rem 1.0rem .1rem black;
+
+    }
+
+    .b-image-1 {
+        background: url('blue-item1.webp') no-repeat center/cover;
+    }
+
+    .b-image-2 {
+        background: url('blue-item2.webp') no-repeat center/cover;
+    }
+
+    .b-image-3 {
+        background: url('blue-item3.webp') no-repeat center/cover;
+    }
+
+
+    /* ----------  Slider 2 section  ---------- */
+
+
+    .slider2-container {
+        height: 47.5rem;
+        box-shadow: 0rem 0rem 1.3rem -.6rem black;
+        padding: 1rem 0rem 0rem 0rem;
+    }
+
+    .slider2-name {
+        margin: 1.2rem;
+        font-size: 2.4rem;
+    }
+
+    .slider2-image {
+        background: url('slider2-image.webp') no-repeat center/cover;
+        height: 40.3rem;
+        margin: .5rem;
+        border-radius: .5rem;
+    }
+
+
+    /* ----------  Dress 2 section  ---------- */
+
+
+    .e3-image-item1 {
+        background: url('dress-item1.webp') no-repeat center/cover;
+        background-size: 18.3rem;
+        width: 18.3rem;
+    }
+
+    .e3-image-item2 {
+        background: url('dress-item2.jpeg') no-repeat center/cover;
+        background-size: 16.0rem;
+    }
+
+    .e3-image-item3 {
+        background: url('dress-item3.jpeg') no-repeat center/cover;
+        background-size: 12.0rem;
+        width: 21.0rem;
+    }
+
+    .e3-image-item4 {
+        background: url('dress-item4.jpeg') no-repeat center/cover;
+        background-size: 14.6rem;
+    }
+
+    .e3-image-item5 {
+        background: url('dress-item5.jpeg') no-repeat center/cover;
+        background-size: 15.0rem;
+        width: 20.8rem;
+    }
+
+    .e3-image-item6 {
+        background: url('dress-item6.jpeg') no-repeat center/cover;
+        background-size: 18.9rem;
+        width: 17.6rem;
+    }
+
+
+    /* ----------  Top-deals section  ---------- */
+
+
+    .top-deals-name-container {
+        height: 15.0rem;
+        box-shadow: -.2rem 0rem .9rem -.4rem black;
+        background: url('top-deals-image.webp') no-repeat center/cover;
+    }
+
+    .top-deals-container {
+        left: -5rem;
+        background: #ffffff;
+        padding: 1.0rem 0rem;
+        width: 100%;
+        height: 52.5rem;
+        transform: scale(0.92);
+        position: relative;
+        display: grid;
+        place-items: center;
+        grid-template-columns: auto auto auto;
+    }
+
+    .top-deals-item {
+        display: grid;
+        place-items: center;
+        height: 24.1rem;
+        width: 45.4rem;
+        transform: scale(0.95);
+        box-shadow: 0rem 0rem .5rem -.1rem black;
+    }
+
+    .top-deals-item1 {
+        background: url('top-deals-item1.webp') no-repeat center/cover;
+        background-size: 46rem;
+    }
+
+    .top-deals-item2 {
+        background: url('top-deals-item2.webp') no-repeat center/cover;
+        background-size: 46rem;
+    }
+
+    .top-deals-item3 {
+        background: url('top-deals-item3.webp') no-repeat center/cover;
+        background-size: 46rem;
+    }
+
+    .top-deals-item4 {
+        background: url('top-deals-item4.webp') no-repeat center/cover;
+        background-size: 46rem;
+    }
+
+    .top-deals-item5 {
+        background: url('top-deals-item5.webp') no-repeat center/cover;
+        background-size: 46rem;
+    }
+
+    .top-deals-item6 {
+        background: url('top-deals-item6.webp') no-repeat center/cover;
+        background-size: 46rem;
+    }
+
+    .top-deals-item1,
+    .top-deals-item2,
+    .top-deals-item3,
+    .top-deals-item4,
+    .top-deals-item5,
+    .top-deals-item6 {
+        transition: all 0.3s ease-in-out;
+    }
+
+    .top-deals-item1:hover,
+    .top-deals-item2:hover,
+    .top-deals-item3:hover,
+    .top-deals-item4:hover,
+    .top-deals-item5:hover,
+    .top-deals-item6:hover {
+        box-shadow: 0rem 0rem 1.0rem .1rem black;
+    }
+
+
+    /* ----------  Footer section  ---------- */
+
+
+    .footer-container {
+        border: .2rem solid black;
+        width: 100%;
+        box-shadow: 0rem -1.4rem 8rem -1.4rem black;
+        border-radius: 2.8rem 2.8rem 0rem 0rem;
+        height: 32.5rem;
+        margin-top: 5.7rem;
+        background: linear-gradient(#172337, #1e3354);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .footer-container:hover {
+        box-shadow: 0rem 0rem 2.0rem .2rem black;
+    }
+
+    .footer-column {
+        color: white;
+        height: 24.8rem;
+        display: grid;
+        grid-template-columns: 13% 13% 13% 13% 24% 23%;
+    }
+
+    .foot-columns {
+        display: grid;
+        padding: 1.9rem 3.0rem;
+    }
+
+    .footer-main {
+        color: #999999;
+        margin: 1.8rem 0rem 2.0rem 0rem;
+        font-size: 2rem;
+    }
+
+    .f-items {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #dedada;
+    }
+
+    .mail-us {
+        margin-left: 2.3rem;
+    }
+
+    .items {
+        font-size: .9rem;
+    }
+
+    .footer2-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #dedada;
+        padding: 1.0rem 1.3rem;
+        border-top: .1rem solid #ffffff38;
+    }
+
+    .footer-image {
+        width: 46.8rem;
+        height: 5.0rem;
+        background: url('footer-image.svg') no-repeat center/cover;
+        background-size: 46.5rem;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    ::-webkit-scrollbar {
+        width: .6rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(203, 203, 203);
+        border-radius: 100rem;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+
+
+
+    @media (max-width:1200px) {
+        html {
+            font-size: 58%;
+        }
+    }
+
+    @media (max-width:1000px) {
+        html {
+            font-size: 50%;
+        }
+    }
+
+    @media (max-width:9000px) {
+        html {
+            font-size: 56%;
+        }
+    }
+
+    @media (max-width:800px) {
+        html {
+            font-size: 52%;
+        }
+    }
+
+    @media (max-width:700px) {
+        html {
+            font-size: 48%;
+        }
+    }
+
+    @media (max-width:600px) {
+        html {
+            font-size: 20%;
+
+        }
+    }
+
+    @media (max-width:500px) {
+        html {
+            font-size: 20%;
+
+        }
+    }
+
+    @media (max-width:400px) {
+        html {
+            font-size: 20%;
+
+        }
+    }
+
+    @media (max-width:380px) {
+        html {
+            font-size: 20%;
+
+        }
+    }
+
+    @media (max-width:300px) {
+        html {
+            font-size: 20%;
+
+        }
+    }
+
+    @media (max-width:240px) {
+        html {
+            font-size: 20%;
+        }
+    }
+
+    @media (max-width:210px) {
+        html {
+            font-size: 18%;
+        }
+    }
+
+    @media (max-width:180px) {
+        html {
+            font-size: 8%;
+        }
+    }
+</style>
+
+<body>
+    <div class="main-container">
+        <!-- Navbar section  -->
+        <div class="navbar">
+            <img id="explore-logo" src="explore-logo.jpg" alt="">
+            <input type="search" placeholder="Search for products, brands and more">
+            <button>Login</button>
+            <p>Become a seller</p>
+            <p id="more-navbar">More</p>
+            <p>Cart</p>
+        </div>
+
+        <!-- Categories section  -->
+        <div class="categories">
+
+            <div class="cat-items-container">
+                <div class="cat-item">
+                    <img class="cat-images" src="cat-item1.webp" alt="">
+                </div>
+                <p class="cat-item-name">Top offers</p>
+            </div>
+
+            <div class="cat-items-container">
+                <div class="cat-item">
+                    <img class="cat-images" src="cat-item2.webp" alt="">
+                </div>
+                <p class="cat-item-name">Mobiles & Tablets</p>
+            </div>
+
+            <div class="cat-items-container">
+                <div class="cat-item">
+                    <img class="cat-images" src="cat-item3.webp" alt="">
+                </div>
+                <p class="cat-item-name">Electronics</p>
+            </div>
+
+            <div class="cat-items-container">
+                <div class="cat-item">
+                    <img class="cat-images" src="cat-item4.webp" alt="">
+                </div>
+                <p class="cat-item-name">TVs & Aplliances</p>
+            </div>
+
+            <div class="cat-items-container">
+                <div class="cat-item">
+                    <img class="cat-images" src="cat-item5.webp" alt="">
+                </div>
+                <p class="cat-item-name">Fashions</p>
+            </div>
+
+            <div class="cat-items-container">
+                <div class="cat-item">
+                    <img class="cat-images" src="cat-item6.webp" alt="">
+                </div>
+                <p class="cat-item-name">Beauty</p>
+            </div>
+
+            <div class="cat-items-container">
+                <div class="cat-item">
+                    <img class="cat-images" src="cat-item7.webp" alt="">
+                </div>
+                <p class="cat-item-name">Home & Furniture</p>
+            </div>
+
+            <div class="cat-items-container">
+                <div class="cat-item">
+                    <img class="cat-images" src="cat-item8.webp" alt="">
+                </div>
+                <p class="cat-item-name">Flights</p>
+            </div>
+
+            <div class="cat-items-container">
+                <div class="cat-item">
+                    <img class="cat-images" src="cat-item9.webp" alt="">
+                </div>
+                <p class="cat-item-name">Grocery</p>
+            </div>
+
+        </div>
+
+        <!-- Main-Slider section -->
+        <div class="main-slider-container">
+            <div class="slider-container">
+                <div class="slider-images s-image-1"></div>
+                <div class="slider-images s-image-2"></div>
+                <div class="slider-images s-image-3"></div>
+                <div class="slider-images s-image-4"></div>
+                <div class="slider-images s-image-5"></div>
+                <div class="slider-images s-image-6"></div>
+            </div>
+        </div>
+
+        <!-- watch section  -->
+        <div class="watch-container">
+            <div class="watch-name">Future Brands</div>
+            <div class="watch-container-div">
+                <div class="watch-item-container">
+                    <div class="watch-image w-image-1"></div>
+                </div>
+                <div class="watch-item-container">
+                    <div class="watch-image w-image-2"></div>
+                </div>
+                <div class="watch-item-container">
+                    <div class="watch-image w-image-3"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- electronics 1 section -->
+        <div class="e-container e-container-1">
+            <div class="e-item-container">
+                <div class="e-image e-image-item1"></div>
+                <div class="e-details">
+                    <button class="e-name">Premium Tablets</button>
+                    <button class="e-price">From ₹24,999</button>
+                    <button class="e-company">By Samsung</button>
+                </div>
+            </div>
+            <div class="e-item-container">
+                <div class="e-image e-image-item2"></div>
+                <div class="e-details">
+                    <button class="e-name">Best Headphones</button>
+                    <button class="e-price">From ₹999</button>
+                    <button class="e-company">By Boat,sony & more</button>
+                </div>
+            </div>
+            <div class="e-item-container">
+                <div class="e-image e-image-item3"></div>
+                <div class="e-details">
+                    <button class="e-name">Premium Powerbanks</button>
+                    <button class="e-price">From ₹1,999</button>
+                    <button class="e-company">By Samsung, MI & more</button>
+                </div>
+            </div>
+            <div class="e-item-container">
+                <div class="e-image e-image-item4"></div>
+                <div class="e-details">
+                    <button class="e-name">Best Trimmers</button>
+                    <button class="e-price">From ₹299</button>
+                    <button class="e-company">By Philips, MI & more</button>
+                </div>
+            </div>
+            <div class="e-item-container">
+                <div class="e-image e-image-item5"></div>
+                <div class="e-details">
+                    <button class="e-name">Best Selling Cameras</button>
+                    <button class="e-price">From ₹6,499</button>
+                    <button class="e-company">By Sony & more</button>
+                </div>
+            </div>
+            <div class="e-item-container">
+                <div class="e-image e-image-item6"></div>
+                <div class="e-details">
+                    <button class="e-name">Clogs for Men</button>
+                    <button class="e-price">From ₹199</button>
+                    <button class="e-company">Top Selling Style</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- offers section -->
+        <div class="off-container">
+            <div class="off-item off-item1"></div>
+            <div class="off-item off-item2"></div>
+            <div class="off-item off-item3"></div>
+
+            <div class="off-item off-item4 off-item-extra"></div>
+            <div class="off-item off-item5 off-item-extra"></div>
+            <div class="off-item off-item6 off-item-extra"></div>
+        </div>
+
+        <!-- electronics 2 section -->
+        <div class="e-container">
+            <div class="e-item-container">
+                <div class="e-image e2-image-item1"></div>
+                <div class="e-details">
+                    <button class="e-name">Top 100 Smart TVs</button>
+                    <button class="e-price">Shop Now</button>
+                    <button class="e-company">From ₹5,499</button>
+                </div>
+            </div>
+            <div class="e-item-container">
+                <div class="e-image e2-image-item2"></div>
+                <div class="e-details">
+                    <button class="e-name">Water Geysers</button>
+                    <button class="e-price">Up to 65% Off</button>
+                    <button class="e-company">By Crompton</button>
+                </div>
+            </div>
+            <div class="e-item-container">
+                <div class="e-image e2-image-item3"></div>
+                <div class="e-details">
+                    <button class="e-name">Irons</button>
+                    <button class="e-price">Up to 65% Off</button>
+                    <button class="e-company">Philips, Bajaj & more</button>
+                </div>
+            </div>
+            <div class="e-item-container">
+                <div class="e-image e2-image-item4"></div>
+                <div class="e-details">
+                    <button class="e-name">Washing Machines</button>
+                    <button class="e-price">From ₹699/month</button>
+                    <button class="e-company">Grab Now!</button>
+                </div>
+            </div>
+            <div class="e-item-container">
+                <div class="e-image e2-image-item5"></div>
+                <div class="e-details">
+                    <button class="e-name">Vacuum Cleaners</button>
+                    <button class="e-price">Up to 65% Off</button>
+                    <button class="e-company">Eureka Forbes, Inalsa & more</button>
+                </div>
+            </div>
+            <div class="e-item-container">
+                <div class="e-image e2-image-item6"></div>
+                <div class="e-details">
+                    <button class="e-name">Microwave Oven</button>
+                    <button class="e-price">Up to 45% Off</button>
+                    <button class="e-company">Samsung, IFB & more</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Under section  -->
+        <div class="under-container">
+            <div class="under-image u-image-1"></div>
+            <div class="under-image u-image-2"></div>
+            <div class="under-image u-image-3"></div>
+            <div class="under-image u-image-4"></div>
+        </div>
+
+        <!-- Blue section  -->
+        <div class="blue-container">
+            <div class="blue-image b-image-1"></div>
+            <div class="blue-image b-image-2"></div>
+            <div class="blue-image b-image-3"></div>
+        </div>
+
+        <!-- Slider 2 section  -->
+        <div class="slider2-container">
+            <div class="slider2-name">Big Saving Days</div>
+            <div class="slider2-image"></div>
+        </div>
+
+        <!-- dress section  -->
+        <div class="e-container">
+            <div class="e-item-container">
+                <div class="e-image e3-image-item1"></div>
+                <div class="e-details">
+                    <button class="e-name">Men's Caps</button>
+                    <button class="e-price">Min. 50% Off</button>
+                </div>
+            </div>
+            <div class="e-item-container">
+                <div class="e-image e3-image-item2"></div>
+                <div class="e-details">
+                    <button class="e-name">Bed Linen & Blankets</button>
+                    <button class="e-price">Min. 50% Off</button>
+                </div>
+            </div>
+            <div class="e-item-container">
+                <div class="e-image e3-image-item3"></div>
+                <div class="e-details">
+                    <button class="e-name">Women's Ponchos</button>
+                    <button class="e-price">Up to 65% Off</button>
+                </div>
+            </div>
+            <div class="e-item-container">
+                <div class="e-image e3-image-item4"></div>
+                <div class="e-details">
+                    <button class="e-name">Kid's Combos And Costumes</button>
+                    <button class="e-price">From ₹399</button>
+                </div>
+            </div>
+            <div class="e-item-container">
+                <div class="e-image e3-image-item5"></div>
+                <div class="e-details">
+                    <button class="e-name">Men's Jackets</button>
+                    <button class="e-price">Up to 65% Off</button>
+                </div>
+            </div>
+            <div class="e-item-container">
+                <div class="e-image e3-image-item6"></div>
+                <div class="e-details">
+                    <button class="e-name">Women's Scarves</button>
+                    <button class="e-price">Up to 45% Off</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- top deals section -->
+        <div class="top-deals-name-container"></div>
+        <div class="top-deals-container">
+            <div class="top-deals-item top-deals-item1"></div>
+            <div class="top-deals-item top-deals-item2"></div>
+            <div class="top-deals-item top-deals-item3"></div>
+
+            <div class="top-deals-item top-deals-item4"></div>
+            <div class="top-deals-item top-deals-item5"></div>
+            <div class="top-deals-item top-deals-item6"></div>
+        </div>
+
+        <!-- footer section  -->
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="foot-columns">
+                    <div class="footer-main">ABOUT</div>
+                    <div class="f-items foot-1">Contact Us</div>
+                    <div class="f-items foot-1">About Us</div>
+                    <div class="f-items foot-1">Careers</div>
+                    <div class="f-items foot-1">Flipkart Stories</div>
+                    <div class="f-items foot-1">Press</div>
+                    <div class="f-items foot-1">Corporate</div>
+                    <div class="f-items foot-1">Information</div>
+                </div>
+                <div class="foot-columns">
+                    <div class="footer-main">HELP</div>
+                    <div class="f-items foot-2">Payments</div>
+                    <div class="f-items foot-2">Shipping</div>
+                    <div class="f-items foot-2">Cancellation</div>
+                    <div class="f-items foot-2">FAQ</div>
+                    <div class="f-items foot-2">Report</div>
+                </div>
+                <div class="foot-columns">
+                    <div class="footer-main">POLICY</div>
+                    <div class="f-items foot-3">Return Policy</div>
+                    <div class="f-items foot-3">Terms Of Use</div>
+                    <div class="f-items foot-3">Security</div>
+                    <div class="f-items foot-3">Privacy</div>
+                    <div class="f-items foot-3">Sitemap</div>
+                    <div class="f-items foot-3">EPR Compliance</div>
+                </div>
+                <div class="foot-columns">
+                    <div class="footer-main">SOCIAL</div>
+                    <div class="f-items foot-4">Facebook</div>
+                    <div class="f-items foot-4">Twitter</div>
+                    <div class="f-items foot-4">Youtube</div>
+                </div>
+                <div class="foot-columns mail-us">
+                    <div class="footer-main">Mail Us:</div>
+                    <div class="f-items foot-5">Flipkart Internet Private Limited,Buildings Alyssa, Begonia &Clove
+                        Embassy Tech Village,Outer Ring Road, Devarabeesanahalli Village,Bengaluru, 560103,Karnataka,
+                        India</div>
+                </div>
+                <div class="foot-columns">
+                    <div class="footer-main">Registered Office Address:</div>
+                    <div class="f-items foot-6">Flipkart Internet Private Limited, Buildings Alyssa, Begonia & Clove
+                        Embassy Tech Village, Outer Ring Road, Devarabeesanahalli Village, Bengaluru, 560103, Karnataka,
+                        India CIN : U51109KA2012PTC066107Telephone: 044-45614700</div>
+                </div>
+
+            </div>
+            <div class="footer2-container">
+                <div class="items">Become a Seller</div>
+                <div class="items">Advertise</div>
+                <div class="items">Gift Card</div>
+                <div class="items">Help Center</div>
+                <div class="items"> © 2007-2022 Flipkart.com</div>
+                <div class="items footer-image"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
